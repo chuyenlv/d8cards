@@ -1,0 +1,26 @@
+id: movies
+label: Migrate movies from the source database to node
+migration_group: movie
+source:
+  plugin: movies
+destination:
+  plugin: entity:node
+process:
+  type:
+    plugin: default_value
+    default_value: movie
+  title: name
+  uid:
+    plugin: default_value
+    default_value: 1
+  sticky:
+    plugin: default_value
+    default_value: 0
+  field_genres:
+    plugin: migration
+    migration: genres
+    source: genres
+  'field_plot/value': description
+migration_dependencies:
+  required:
+    - genres

@@ -1,0 +1,9 @@
+name: Migrate source SQL
+type: module
+description: 'Examples migration SQL.'
+core: 8.x
+package: D8cards
+# core: 8.x
+dependencies:
+  - migrate
+  - migrate_plus

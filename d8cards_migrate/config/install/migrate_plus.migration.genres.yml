@@ -1,0 +1,18 @@
+id: genres
+label: Migrate genres from the source database to taxonomy terms
+migration_group: movie
+source:
+  plugin: genres
+
+destination:
+  plugin: entity:taxonomy_term
+
+process:
+  name: name
+  description: details
+
+  vid:
+    plugin: default_value
+    default_value: genres
+
+migration_dependencies: {}
